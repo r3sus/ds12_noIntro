@@ -1,0 +1,8 @@
+there's how Releases were built:
+
+lua:
+https://github.com/noahp/srlua-mingw
+glue.exe srlua.exe *.lua *.exe
+
+python:
+pyinstaller -F *.py
