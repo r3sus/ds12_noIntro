@@ -23,13 +23,12 @@ msg = 'was not found.'
 
 block = 300
   while true do
-x = f:seek()
 b1 = f:read(block)
-if not b1 then break; msg = 'quit' end
+if not b1 then break msg = 'quit' end
 if b1:find(s1[3]) then msg = 'is already removed.' break end
 i,j = b1:find(s1[2])
    if i then 
-f:seek("set",x+i-1)
+f:seek("cur",-block+i-1)
 f:write(s1[3])
 msg = 'eliminated.'
 break
